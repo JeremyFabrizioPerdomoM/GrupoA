@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -14,7 +15,7 @@ header {
     align-items: center;
 }
 h1{
-     float:left;
+    float:left;
     margin-left: 100px;
 }
 .logo{
@@ -37,7 +38,7 @@ nav a {
 
 .container {
     padding: 20px;
-     height: 100vh;
+    height: 100vh;
 }
 
 .card {
@@ -60,10 +61,109 @@ footer {
     border-radius: 5px;
 }
 
+/*===Estilo de Botones para todo el proyecto===*/
 button {
-    padding: 10px;
+    padding: 12px;
     background: #007BFF;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
 }
+
+button:hover {
+    background: #072a42;
+}
+/*=======================================*/
+
+/*===Sección de Donaciones en CSS===*/
+.donaciones-box {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.donaciones-box h2 {
+    margin-bottom: 10px;
+}
+
+.montos button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    background: #2ecc71;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.montos button:hover {
+    background: #27ae60;
+}
+
+input, select {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+#mensaje {
+    margin-top: 15px;
+    font-weight: bold;
+}
+.payment-fields {
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.payment-fields input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: 0.2s ease;
+    font-size: 14px;
+}
+
+.payment-fields input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+}
+
+.error {
+    border: 2px solid #e74c3c !important;
+    background-color: #ffecec;
+}
+
+.error-text {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 5px;
+    width: 90%;
+    text-align: left;
+}
+
+.valid {
+    border: 2px solid #2ecc71 !important;
+    background-color: #ecfff1;
+}
+
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+/*============================*/
+
+
+

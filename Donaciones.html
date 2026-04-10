@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Inicio</title>
+    <title>Donaciones</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/donaciones.js"></script>
 </head>
 <body>
 
@@ -11,33 +12,63 @@
     <div class="logo">
         <img class="logotipo" src="IMAGENES/logo.jpeg">
     </div>
-    <h1>INSTITUTO DESARROLLO SOSTENIBLE </h1>
+    <h1>INSTITUTO DESARROLLO SOSTENIBLE</h1>
 </header>
-   <nav>
-          <a href="Index.html">Inicio</a>
-        <a href="Nosotros.html">Acerca de Nosotros</a>
-        <a href="Programas.html">Programas</a>
-        <a href="Ayuda.html">Ayudar</a>
-        <a href="Contactanos.html">Contacto</a>
-        <a href="Donaciones.html">Donaciones</a>
-        <a href="Eventos.html">Eventos</a>
-        <a href="Blog.html">Nuestro Blog</a>
-        <a href="Galleria.html">Galeria</a>
-        <a href="FAQ.html">preguntas frecuentes</a>
-    </nav>
 
-<div class="container">
-    <h2>Donaciones</h2>
-    <p>Apoya nuestra causa con tu donación.</p>
+<nav>
+    <a href="Index.html">Inicio</a>
+    <a href="Nosotros.html">Acerca de Nosotros</a>
+    <a href="Programas.html">Programas</a>
+    <a href="Ayuda.html">Ayudar</a>
+    <a href="Contactanos.html">Contacto</a>
+    <a href="Donaciones.html">Donaciones</a>
+    <a href="Eventos.html">Eventos</a>
+    <a href="Blog.html">Nuestro Blog</a>
+    <a href="Galleria.html">Galeria</a>
+    <a href="FAQ.html">preguntas frecuentes</a>
+</nav>
 
-    <form>
-        <input type="number" placeholder="Monto"><br><br>
-        <button>Donar</button>
-    </form>
-</div>
+<form id="donacionesForm" class="donaciones-box" method="GET" autocomplete="on">
+    <h2>Apoya nuestra causa</h2>
+
+    <div id="montosContainer">
+        <button type="button" data-monto="100">L100</button>
+        <button type="button" data-monto="300">L300</button>
+        <button type="button" data-monto="500">L500</button>
+        <button type="button" data-monto="1000">L1000</button>
+    </div>
+
+    <input type="text" id="monto" name="monto" placeholder="Otro monto">
+
+    <div id="montoError"></div>
+
+    <select id="donaciones-metodo" name="metodo">
+        <option value="">Selecciona método de pago</option>
+        <option value="card">Tarjeta de crédito</option>
+        <option value="paypal">PayPal</option>
+    </select>
+
+    <div id="metodoError"></div>
+
+    <!-- CARD -->
+    <div id="cardFields" class="payment-fields" style="display:none;">
+        <input id="cardNumber" type="text" placeholder="Número de tarjeta">
+        <input id="cardName" type="text" placeholder="Nombre en la tarjeta">
+        <input id="cardExpiry" type="text" placeholder="MM/AA">
+        <input id="cardCVV" type="text" placeholder="CVV">
+    </div>
+
+    <!-- PAYPAL -->
+    <div id="paypalFields" class="payment-fields" style="display:none;">
+        <input id="paypalEmail" name="email" type="email" placeholder="Correo de PayPal" autocomplete="email">
+    </div>
+
+    <button type="submit" id="btnDonar">Donar ahora</button>
+
+    <p id="donaciones-mensaje"></p>
+</form>
 
 <footer>© 2026 Organización XYZ</footer>
-
-<script src="js/app.js"></script>
+<script src="js/App.js"></script>
 </body>
 </html>
