@@ -53,6 +53,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    //FORMATO DEL NOMBRE
+    const cardNameInput = document.getElementById("cardName");
+
+    if (cardNameInput) {
+        cardNameInput.addEventListener("input", () => {
+            let value = cardNameInput.value;
+
+            value = value.replace(/[^A-Za-z ]/g, "");
+
+            value = value.replace(/\s+/g, " ").trimStart();
+
+            let words = value.split(" ");
+
+            if (words.length > 4) {
+                words = words.slice(0, 4);
+            }
+
+            value = words.join(" ");
+
+            cardNameInput.value = value;
+        });
+    }
+
     //cortar CVV
     const cardCvvInput = document.getElementById("cardCVV");
 

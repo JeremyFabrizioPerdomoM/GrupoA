@@ -1,9 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     background: #f4f4f4;
-    height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.7;
 }
 
 header {
@@ -11,57 +18,137 @@ header {
     color: white;
     padding: 1rem;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
-h1{
-    float:left;
-    margin-left: 100px;
+
+/*CONTENEDOR ADENTRO DEL HEADER*/
+.logo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
 }
-.logo{
-    float:right;
-    margin-left: 100px;
-}
-.logotipo{
+
+/*LOGO*/
+.logotipo {
+    width: 100px;
     border-radius: 100%;
-    width: 100PX;
-  
+    margin-right: auto;
 }
-nav{
+
+/*TITULO*/
+.logo h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    text-align: center;
+}
+
+/*HAMBURGER BUTTONS*/
+
+#menu-toggle {
+    display: none;
+}
+
+.hamburger-buttons {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.hamburger-buttons div {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+}
+
+/*NAV*/
+nav {
     background-color: #060955;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
 }
+
 nav a {
     color: white;
     margin: 0 10px;
     text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
 }
 
+nav a:hover {
+    background: #072a42;
+}
+
+/*LAYOUT*/
 .container {
     padding: 20px;
-    height: 100vh;
-}
-
-.card {
-    background: white;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
+    flex: 1;
 }
 
 footer {
     background: #222;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 1rem;
 }
 
-.gallery img {
-    width: 200px;
-    margin: 10px;
-    border-radius: 5px;
+/* ============ RESPONSIVE HAMBURGER BUTTONS ============ */
+html, body {
+    overflow-x: hidden;
 }
 
-/*===Estilo de Botones para todo el proyecto===*/
+@media (max-width: 1340px) {
+
+    .hamburger-buttons {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 6px;
+        font-size: 1.5rem;
+    }
+
+    /*PARA ABRIR Y CERRAR EL MENU*/
+    #menu-toggle:checked ~ nav {
+        display: flex;
+    }
+}
+
+@media (max-width:850px) {
+
+    .logotipo {
+        width: 50px;
+    }
+
+    .logo h1 {
+        font-size: 0.85rem;
+    }
+    nav a {
+        padding: 6px;
+        font-size: 1rem;
+    }
+}
+
+/* ================= BUTTONS ================= */
+
 button {
     padding: 12px;
     background: #007BFF;
@@ -75,9 +162,15 @@ button {
 button:hover {
     background: #072a42;
 }
-/*=======================================*/
 
-/*===Sección de Donaciones en CSS===*/
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+/* ========================================== */
+
+/*==================HTML -> DONACIONES=====================*/
 .donaciones-box {
     max-width: 400px;
     margin: 40px auto;
@@ -88,58 +181,34 @@ button:hover {
     text-align: center;
 }
 
-.donaciones-box h2 {
-    margin-bottom: 10px;
-}
-
-.montos button {
-    margin: 5px;
-    padding: 10px 15px;
-    border: none;
-    background: #2ecc71;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.montos button:hover {
-    background: #27ae60;
-}
-
 input, select {
     width: 90%;
     padding: 10px;
     margin: 10px 0;
 }
 
-#mensaje {
-    margin-top: 15px;
-    font-weight: bold;
-}
+/*PAYMENT*/
 .payment-fields {
     width: 90%;
     margin: 10px auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: center;
 }
 
-.payment-fields input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    transition: 0.2s ease;
-    font-size: 14px;
+.donaciones-box h2 {
+    margin-bottom: 10px;
 }
 
-.payment-fields input:focus {
-    border-color: #3498db;
-    outline: none;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+.montos button {
+    margin-bottom: 10px;
+    border: none;
+}
+.montos button:hover {
+    background: #27ae60;
 }
 
+/*ERRORES*/
 .error {
     border: 2px solid #e74c3c !important;
     background-color: #ffecec;
@@ -153,17 +222,96 @@ input, select {
     text-align: left;
 }
 
+/*VALIDAR*/
 .valid {
     border: 2px solid #2ecc71 !important;
     background-color: #ecfff1;
 }
+/* ========================================================*/
 
-button:disabled {
-    background: #aaa;
-    cursor: not-allowed;
-    opacity: 0.7;
+/*==================HTML -> BLOG=====================*/
+
+.blog-main-tituto {
+  background: linear-gradient(135deg, #0f766e, #115e59);
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  border-bottom: 5px solid #0ea5e9;
 }
-/*============================*/
 
+.blog-main-tituto h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
 
+.blog-main-tituto p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
+.blog-cuerpo {
+  max-width: 900px;
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.blog-cuerpo h2 {
+  color: #0f766e;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  border-left: 5px solid #0ea5e9;
+  padding-left: 12px;
+}
+
+.blog-cuerpo h3 {
+  color: #0b3d3a;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.blog-cuerpo p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.blog-cuerpo ul {
+  padding-left: 20px;
+  margin: 12px 0 18px;
+}
+
+.blog-cuerpo li {
+  margin-bottom: 8px;
+  transition: 0.2s ease;
+}
+
+/*effectos*/
+.blog-cuerpo li:hover {
+  color: #0ea5e9;
+}
+
+.blog-cuerpo strong {
+  color: #0f766e;
+}
+
+@media (max-width: 768px) {
+  .blog-main-tituto h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog-cuerpo {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .blog-cuerpo h2 {
+    font-size: 1.3rem;
+  }
+}
+/* ========================================================*/
