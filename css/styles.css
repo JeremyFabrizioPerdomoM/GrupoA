@@ -231,7 +231,7 @@ input, select {
 
 /*==================HTML -> BLOG=====================*/
 
-.blog-main-tituto {
+.main-titulo {
   background: linear-gradient(135deg, #0f766e, #115e59);
   color: #fff;
   padding: 60px 20px;
@@ -239,20 +239,20 @@ input, select {
   border-bottom: 5px solid #0ea5e9;
 }
 
-.blog-main-tituto h2 {
+.main-titulo h2 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-.blog-main-tituto p {
+.main-titulo p {
   font-size: 1.1rem;
   opacity: 0.9;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.blog-cuerpo {
+.cuerpo-style {
   max-width: 900px;
   margin: 30px auto;
   background: #ffffff;
@@ -261,7 +261,7 @@ input, select {
   box-shadow: 0 8px 20px rgba(0,0,0,0.06);
 }
 
-.blog-cuerpo h2 {
+.cuerpo-style h2 {
   color: #0f766e;
   font-size: 1.6rem;
   margin-bottom: 15px;
@@ -269,48 +269,48 @@ input, select {
   padding-left: 12px;
 }
 
-.blog-cuerpo h3 {
+.cuerpo-style h3 {
   color: #0b3d3a;
   font-size: 1.2rem;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
-.blog-cuerpo p {
+.cuerpo-style p {
   margin-bottom: 15px;
   font-size: 1rem;
 }
 
-.blog-cuerpo ul {
+.cuerpo-style ul {
   padding-left: 20px;
   margin: 12px 0 18px;
 }
 
-.blog-cuerpo li {
+.cuerpo-style li {
   margin-bottom: 8px;
   transition: 0.2s ease;
 }
 
 /*effectos*/
-.blog-cuerpo li:hover {
+.cuerpo-style li:hover {
   color: #0ea5e9;
 }
 
-.blog-cuerpo strong {
+.cuerpo-style strong {
   color: #0f766e;
 }
 
 @media (max-width: 768px) {
-  .blog-main-tituto h2 {
+  .main-tituto h2 {
     font-size: 1.5rem;
   }
 
-  .blog-cuerpo {
+  .cuerpo-style {
     margin: 15px;
     padding: 20px;
   }
 
-  .blog-cuerpo h2 {
+  .cuerpo-style h2 {
     font-size: 1.3rem;
   }
 }
