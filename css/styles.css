@@ -315,3 +315,50 @@ input, select {
   }
 }
 /* ========================================================*/
+
+/* ================= PROGRAMAS Y AYUDA  ================= */
+
+
+.container h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #060955;
+}
+
+
+.container {
+  padding: 20px;
+  flex: 1;
+}
+
+
+.container .card {
+  max-width: 900px;
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+}
+
+
+.container .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+
+.container .card h3 {
+  color: #0b3d3a;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+
+.container .card p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
