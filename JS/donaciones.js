@@ -277,9 +277,13 @@ function procesarDonacion() {
         let metodoTexto = metodoSelect.value === "card" ? "Tarjeta" : "PayPal";
 
         mensaje.style.color = "green";
-        mensaje.textContent =
-            "Donación exitosa de " + simbolo + montoInput.value + " vía " + metodoTexto;
+        mensaje.textContent = "Donación exitosa de " + simbolo + montoInput.value + " vía " + metodoTexto;
 
+        //BORRAR MENSAJE
+        setTimeout(() => {
+            mensaje.textContent = "";
+        }, 3000);
+        
         formulario.reset();
         limpiarErrores();
         cardFields.style.display = "none";

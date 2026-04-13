@@ -7,7 +7,7 @@ const regexIsEmpty = /^\s*$/;
 const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 document.addEventListener("DOMContentLoaded", () => {
-    formulario = document.getElementById("donacionesForm");
+    formulario = document.getElementById("contactoForm");
     nombreInput = document.getElementById("name");
     emailInput = document.getElementById("email");
     mensajeInput = document.getElementById("mensaje");
