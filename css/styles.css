@@ -122,7 +122,7 @@ nav a:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    align-self: flex-start; /* esto arregla la altura */
+    align-self: flex-start; 
 }
 .info-contacto {
      flex: 1;
@@ -132,7 +132,7 @@ nav a:hover {
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    align-self: flex-start; /* <-- agrega esto */
+    align-self: flex-start; 
 }
 
 .info-contacto h3 {
@@ -634,6 +634,73 @@ color: #0f766e;
     .home-stats {
         flex-direction: column;
         gap: 20px;
+    }
+}
+
+/* ================= EVENTOS ================= */
+.eventos-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.evento-card {
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 6px solid #0ea5e9;
+    background: #f8f9fa;
+    align-items: flex-start;
+}
+
+.evento-card.pasado {
+    border-left-color: #aaa;
+    opacity: 0.75;
+}
+
+.evento-fecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 55px;
+    background: #060955;
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+}
+
+.evento-card.pasado .evento-fecha {
+    background: #888;
+}
+
+.evento-fecha .mes {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+.evento-fecha .dia {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.evento-info h3 {
+    color: #0f766e;
+    margin-bottom: 4px;
+}
+
+.evento-info p {
+    margin-bottom: 3px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .evento-card {
+        flex-direction: column;
     }
 }
 
