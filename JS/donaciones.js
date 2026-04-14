@@ -103,22 +103,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //EL METODO
     metodoSelect.addEventListener("change", () => {
+    cardFields.style.display = "none";
+    paypalFields.style.display = "none";
+    limpiarErrores();
 
-        cardFields.style.display = "none";
-        paypalFields.style.display = "none";
+    if (metodoSelect.value === "card") {
+        cardFields.style.display = "flex";
+    }
 
-        limpiarErrores();
+    if (metodoSelect.value === "paypal") {
+        paypalFields.style.display = "flex";
+    }
 
-        if (metodoSelect.value === "card") {
-            cardFields.style.display = "flex";
-        }
-
-        if (metodoSelect.value === "paypal") {
-            paypalFields.style.display = "flex";
-        }
-
-        actualizarBotones();
+    actualizarBotones(); // <- aquí sí se llama
     });
+
 
     //boton SUBMIT
     formulario.addEventListener("submit", (e) => {
